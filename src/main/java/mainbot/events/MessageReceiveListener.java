@@ -15,8 +15,8 @@ import java.util.Map;
 public class MessageReceiveListener extends ListenerAdapter {
 
 
-    public static DataBase database = DataBase.getInstance();
-    public static MessageProcessor messageProcessor = new MessageProcessor();
+    public static final DataBase database = DataBase.getInstance();
+    public static final MessageProcessor messageProcessor = new MessageProcessor();
 
     /**
      * This method is called whenever a message is received in the server.

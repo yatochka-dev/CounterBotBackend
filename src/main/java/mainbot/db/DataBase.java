@@ -10,6 +10,7 @@ public class DataBase {
 
     final String dbUri = "neo4j+s://aa12c4ff.databases.neo4j.io";
     final String dbUser = "neo4j";
+    @SuppressWarnings("SpellCheckingInspection")
     final String dbPassword = "PPpNndojWtHaV2u5QSEnFdTtl42t5uIva7Mm9txKCqQ";
     public Driver driver = null;
 
@@ -33,9 +34,5 @@ public class DataBase {
     public ExecutableQuery executableQuery(String query) {
         return this.driver.executableQuery(query);
     }
-    
-    public void disconnect() {
-        // Disconnect from the database
-        this.driver.close();
-    }
+
 }

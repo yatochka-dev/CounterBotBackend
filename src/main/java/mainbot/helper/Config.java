@@ -1,6 +1,7 @@
 package mainbot.helper;
 
 // singleton
+@SuppressWarnings("SameReturnValue")
 public class Config {
 
 

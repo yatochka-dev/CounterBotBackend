@@ -1,4 +1,4 @@
-package mainbot.db;
+package mainbot.bot;
 
 import mainbot.commands.BotCommands;
 import mainbot.events.GuildReadyEvent;
@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot {
     private static Bot instance = null;
+    @SuppressWarnings("SpellCheckingInspection")
     private static final String BOT_TOKEN = "MTAwNzU4MjA2MTY3MjAxNzk1MQ.Gi3eNu._BPWq15l406sAqUsqv3cWGTmG8jfBpBFTEDhis";
 
     public JDA bot = null;
@@ -41,8 +42,4 @@ public class Bot {
     }
 
 
-    public void disconnect() {
-        bot.shutdown();
-
-    }
 }

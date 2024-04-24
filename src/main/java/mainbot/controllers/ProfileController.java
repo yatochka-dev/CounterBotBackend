@@ -1,21 +1,19 @@
 package mainbot.controllers;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Objects;
-
-import mainbot.db.Bot;
 import mainbot.db.DataBase;
 import mainbot.models.ProfileStats;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.Map;
+
 @RestController
 public class ProfileController {
 
     private final DataBase db = DataBase.getInstance();
-    private final Bot bot = Bot.getInstance();
+//    private final Bot bot = Bot.getInstance();
 
     @GetMapping("/profile")
     public ProfileStats profile(@RequestParam(name = "id") String id) {
@@ -39,6 +37,7 @@ public class ProfileController {
         System.out.println("mostUsedWords: " + Arrays.toString(mostUsedWords));
         System.out.println("leastUsedWords: " + Arrays.toString(leastUsedWords));
 
+        //noinspection unchecked
         return new ProfileStats(
                 true,
                 totalWordsUsed,

@@ -17,7 +17,7 @@ public class BotCommands extends ListenerAdapter {
         if (slashCommandHelper.is(event, "profile")) {
             try {
                 profileCommand(event);
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 event.reply("An error occurred while processing the command :cry:").queue();
             }
             return;
@@ -27,7 +27,7 @@ public class BotCommands extends ListenerAdapter {
     }
 
 
-    public void profileCommand(@NotNull SlashCommandInteractionEvent event) throws InterruptedException {
+    public void profileCommand(@NotNull SlashCommandInteractionEvent event) {
 
         EmbedBuilder embed = new EmbedBuilder();
         // Build the profile URL

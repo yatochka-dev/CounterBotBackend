@@ -55,7 +55,7 @@ public class MessageProcessor {
      * This method builds a query to add the words to the database.
      * It creates Word nodes for each word in the message and connects them to the User node with a Said relationship.
      *
-     * @param words The words to add to the database.
+     * @param message The words to add to the database.
      * @param id    The ID of the user who said the words.
      * @return The query to execute.
      */
