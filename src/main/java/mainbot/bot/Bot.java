@@ -1,6 +1,7 @@
 package mainbot.bot;
 
 import mainbot.commands.BotCommands;
+import mainbot.dotenv.DotEnv;
 import mainbot.events.GuildReadyEvent;
 import mainbot.events.MessageReceiveListener;
 import net.dv8tion.jda.api.JDA;
@@ -10,8 +11,9 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot {
     private static Bot instance = null;
-    @SuppressWarnings("SpellCheckingInspection")
-    private static final String BOT_TOKEN = "MTAwNzU4MjA2MTY3MjAxNzk1MQ.Gi3eNu._BPWq15l406sAqUsqv3cWGTmG8jfBpBFTEDhis";
+    private static final DotEnv dotenv = DotEnv.getInstance();
+
+    private static final String BOT_TOKEN = dotenv.get("DISCORD_TOKEN");
 
     public JDA bot = null;
 

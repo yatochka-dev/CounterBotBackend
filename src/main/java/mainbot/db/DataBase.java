@@ -1,5 +1,6 @@
 package mainbot.db;
 
+import mainbot.dotenv.DotEnv;
 import org.neo4j.driver.AuthTokens;
 import org.neo4j.driver.Driver;
 import org.neo4j.driver.ExecutableQuery;
@@ -8,10 +9,11 @@ import org.neo4j.driver.GraphDatabase;
 public class DataBase {
     private static mainbot.db.DataBase instance = null;
 
-    final String dbUri = "neo4j+s://aa12c4ff.databases.neo4j.io";
-    final String dbUser = "neo4j";
-    @SuppressWarnings("SpellCheckingInspection")
-    final String dbPassword = "PPpNndojWtHaV2u5QSEnFdTtl42t5uIva7Mm9txKCqQ";
+    private static final DotEnv dotenv = DotEnv.getInstance();
+    final String dbUri = dotenv.get("NEO4J_URI");
+    final String dbUser = dotenv.get("NEO4J_USER");
+
+    final String dbPassword = dotenv.get("NEO4J_PASSWORD");
     public Driver driver = null;
 
     private DataBase() {
