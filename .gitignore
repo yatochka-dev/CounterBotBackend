@@ -39,3 +39,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/out/artifacts/CounterBot_jar/CounterBot.jar
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+/README.Docker.md
